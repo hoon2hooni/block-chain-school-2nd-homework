@@ -1,25 +1,8 @@
-function filterNfts(nfts) {
-  return nfts.filter(({ price }) => price > 500);
-}
+function filterNfts(nfts) {}
 
-function getTotalPrice(nfts) {
-  return nfts.reduce((init, { price }) => {
-    return init + price;
-  }, 0);
-}
+function getTotalPrice(nfts) {}
 
-function groupByNameTotal(nfts) {
-  const groupByName = nfts.reduce((init, { name, price }) => {
-    return { ...init, [name]: init[name] ? [...init[name], price] : [price] };
-  }, {});
-
-  for (const key in groupByName) {
-    groupByName[key] = groupByName[key].reduce((init, curr) => {
-      return init + curr;
-    }, 0);
-  }
-  return groupByName;
-}
+function groupByNameTotal(nfts) {}
 
 module.exports = {
   filterNfts,
